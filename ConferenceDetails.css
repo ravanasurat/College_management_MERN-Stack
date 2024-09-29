@@ -1,0 +1,82 @@
+.conference-detail {
+    display: flex;
+    flex-direction: column; /* Stack heading above the cards */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    text-align: center;
+    background-color: #ffcc80; /* Set the background color to sky blue */
+}
+
+.card-container {
+    display: flex; /* Align items horizontally */
+    flex-direction: row; /* Horizontal layout for the cards */
+    justify-content: space-evenly; /* Evenly space the cards */
+    align-items: flex-start; /* Align the items from the top */
+    width: 100%; /* Take full width */
+    flex-wrap: wrap; /* Wrap cards if there's no space */
+    max-width: 1200px; /* Set max width for better layout */
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+}
+
+.file-card {
+    flex: 0 0 45%; /* Set card width to take 45% of the parent container */
+    margin: 2px; /* Space between cards */
+    border: 0.2cm solid black; /* Reduce the border width to 0.5cm */
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    transition: transform 0.5s;
+    max-width: 500px; /* Set max-width for each card */
+    padding: 20px;
+    background-color: #f9f9f9; /* Set card background color */
+}
+
+.file-card:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+    border: 0.2cm solid black; /* Keep the reduced border width on hover */
+}
+
+.image-container {
+    position: relative; /* Position relative to allow absolute positioning of text */
+    text-align: center; /* Center the image and button */
+}
+
+.file-image {
+    width: 100%; /* Full width for the image */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 300px; /* Limit the height for consistency */
+    object-fit: cover; /* Ensure the image doesn't stretch */
+    border-radius: 5px;
+}
+
+.download-button {
+    width: 100%; /* Full width for button */
+    padding: 10px;
+    background-color: #060606; /* Button color */
+    color: white;
+    border: none; /* Remove border */
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px; /* Space between the image and the button */
+    font-size: 16px;
+}
+
+.download-button:hover {
+    background-color: #5cbdee; /* Darker button color on hover */
+}
+
+/* Make the layout responsive */
+@media (max-width: 768px) {
+    .file-card {
+        flex: 0 0 100%; /* Full width on smaller screens */
+        max-width: 100%; /* Remove width restrictions */
+    }
+
+    .card-container {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center cards */
+    }
+}
